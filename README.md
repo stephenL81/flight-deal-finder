@@ -6,6 +6,7 @@ This is a last-minute flight deal finder that monitors round-trip flight prices 
 The app was adapted from the original course specifications due to API availability changes (see "Project Adaptations" below).
 
 
+
 How to Run:
 
 1. Install required dependencies:
@@ -36,14 +37,15 @@ How to Run:
 
 5. First run - populate IATA codes:
    Uncomment the line in main.py:
-   # data_manager.set_missing_iatas()
+   `# data_manager.set_missing_iatas()`
    Run once, then comment it out again.
 
 6. Run the app:
    python main.py
 
-How It Works (Code Overview):
 
+
+How It Works (Code Overview):
 
 main.py → Orchestrates all classes to execute the flight deal search workflow:
 - Coordinates DataManager, FlightSearch, FlightData, and NotificationManager classes
@@ -81,6 +83,7 @@ Environment Variables (dotenv) → Securely stores all API credentials:
 - Credentials are loaded at runtime using python-dotenv
 
 
+
 Key Features:
 - Automated flight price monitoring: Checks multiple destinations across a range of dates
 - Budget-aware filtering: Only alerts on flights under your specified maximum price
@@ -92,8 +95,10 @@ Key Features:
 - Environment variable security: API credentials safely stored and never committed to version control
 
 
+
 Project Adaptations:
 This project required significant adaptation from the original course specifications due to third-party API changes:
+
 
 Challenge 1 - API Provider Change:
 The original project specified using the Amadeus Flight API, which discontinued free tier access for new users during development. The Amadeus API offered a specialized "Inspiration Search" endpoint that could search across flexible date ranges and return the cheapest destinations within a budget - a feature designed specifically for this type of flight deal finder.
@@ -119,6 +124,7 @@ Twilio trial accounts impose a strict 160-character limit per message, and the i
 Solution: Redesigned the message format to be concise but informative, sending one message per deal with essential information only (route, dates, price). The formatted messages prioritize clarity while respecting the character constraint.
 
 
+
 Technical Skills Demonstrated:
 - API Integration: Successfully integrated three different APIs (Duffel, Sheety, Twilio) with different authentication methods
 - Problem-Solving: Adapted project requirements when facing real-world API limitations
@@ -127,6 +133,7 @@ Technical Skills Demonstrated:
 - Error Handling: Implemented try-except blocks and API response validation
 - Environment Security: Properly secured API credentials using environment variables
 - Product Thinking: Reframed project scope to create a more practical, sustainable application
+
 
 
 Notes:
